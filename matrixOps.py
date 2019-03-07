@@ -4,7 +4,7 @@ def mult_matrix(A, B):
         return -1
     else:
         for i in range(len(A)):
-            res.append([0 for i in range(len(A))])
+            res.append([0 for i in range(len(B[0]))])
             for j in range(len(B[0])):
                 for k in range(len(B)):
                     res[i][j] += (A[i][k] * B[k][j])
@@ -53,3 +53,22 @@ def gauss_solve(A):
             A[k][m] -= A[k][i] * x[0]
     return x
 
+def printMatrix(M):
+    for i in M:
+        print(i)
+    print()
+
+def dotProduct(M,V):
+    result = []
+    sum = 0
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+           sum += (M[i][j] * V[j])
+        result.append(sum)
+        sum = 0
+    return result
+
+M = [[2,7],[-3,4],[1,-2]]
+V = [-1,1]
+
+print(dotProduct(M,V))
