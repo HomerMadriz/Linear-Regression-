@@ -61,6 +61,9 @@ def printMatrix(M):
 def dotProduct(M,V):
     result = []
     sum = 0
+    if(len(M[0]) != len(V)):
+        return -1
+
     for i in range(len(M)):
         for j in range(len(M[0])):
            sum += (M[i][j] * V[j])
@@ -68,7 +71,3 @@ def dotProduct(M,V):
         sum = 0
     return result
 
-M = [[2,7],[-3,4],[1,-2]]
-V = [-1,1]
-
-print(dotProduct(M,V))

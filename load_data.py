@@ -28,9 +28,9 @@ def createRegMatrix(src):
     return A, Y   
 
 def createSets(src, train_percentage):
-    with open("train_set", "w", newline="") as train_file:
+    with open("train_set.csv", "w", newline="") as train_file:
         train_writer = csv.writer(train_file)
-        with open("test_set", "w", newline="") as test_file:
+        with open("test_set.csv", "w", newline="") as test_file:
             test_writer = csv.writer(test_file)
             with open(src, "r") as sample_file:
                 sample_reader = csv.reader(sample_file)
@@ -44,7 +44,7 @@ def createSets(src, train_percentage):
                     else:
                         test_writer.writerow(row)
                         count_test +=1
-    print(f"Train set created with {count_train} lines \n Test set created with {count_test} lines")
+    print(f"Train set created with {count_train} lines \nTest set created with {count_test} lines\n")
     train_file.close()
     test_file.close()
     sample_file.close()

@@ -1,2 +1,5 @@
 .vscode/
 __pycache__/
+new_file.csv/
+test_set.csv/
+train_set.csv/
