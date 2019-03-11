@@ -26,7 +26,7 @@ def test(test_file, b_vector):
         return -1
     
     for i in range(len(Y)):
-        RMSE += (Y_est[i] - Y[i][0])
+        RMSE += ((Y_est[i] - Y[i][0])**2)
     
     RMSE = (RMSE / len(Y))**(1/2)
 
